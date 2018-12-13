@@ -3,9 +3,12 @@
 # Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
 # Full license terms provided in LICENSE.md file.
 
+IMAGE_NAME="nvidia-dope"
+TAG_NAME="realsensed435"
+
 CONTAINER_NAME=$1
 if [[ -z "${CONTAINER_NAME}" ]]; then
-    CONTAINER_NAME=nvidia-dope-v1
+    CONTAINER_NAME=nvidia-realsensed435
 fi
 
 # This specifies a mapping between a host directory and a directory in the
@@ -28,7 +31,7 @@ DOPE_ID=`docker ps -aqf "name=^/${CONTAINER_NAME}$"`
 if [ -z "${DOPE_ID}" ]; then
     echo "Creating new DOPE docker container."
     xhost +
-    nvidia-docker run -it --privileged --network=host -v ${HOST_DIR}:${CONTAINER_DIR}:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix${DISPLAY} --name=${CONTAINER_NAME} nvidia-dope:kinetic-v1 bash
+    nvidia-docker run -it --privileged --network=host -v ${HOST_DIR}:${CONTAINER_DIR}:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix${DISPLAY} --name=${CONTAINER_NAME} $IMAGE_NAME:$TAG_NAME bash
 else
     echo "Found DOPE docker container: ${DOPE_ID}."
     # Check if the container is already running and start if necessary.

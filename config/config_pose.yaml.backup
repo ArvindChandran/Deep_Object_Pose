@@ -1,15 +1,15 @@
-topic_camera: "/camera/color/image_raw"
+topic_camera: "/dope/webcam_rgb_raw"
 topic_publishing: "dope"
 frame_id: "/dope"
 
 # Comment any of these lines to prevent detection / pose estimation of that object
 weights: {
-    "cracker":"cracker_60.pth", 
-    "gelatin":"gelatin_60.pth",
-    "meat":"meat_20.pth", 
-    "mustard":"mustard_60.pth", 
+    # "cracker":"cracker_60.pth", 
+    # "gelatin":"gelatin_60.pth",
+    # "meat":"meat_20.pth", 
+    # "mustard":"mustard_60.pth", 
     "soup":"soup_60.pth", 
-    "sugar":"sugar_60.pth"
+    #"sugar":"sugar_60.pth"
 }
 
 # Cuboid dimension in cm x,y,z
