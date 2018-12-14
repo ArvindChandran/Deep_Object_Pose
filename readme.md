@@ -15,20 +15,20 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 ## Installing
 
 1. **Install Nvidia-Docker**
-
-2. **Create the Docker image**
-
-   These instructions assume you have access to the .TAR file of my image. Once you've downloaded the image,
-   you need to run:
+   Please follow the [Nvidia-Docker quickstart installation](https://github.com/NVIDIA/nvidia-docker)
+   
+2. **Pull the Docker image**
    ```
-   nvidia-docker load -i nvidia-dope-realsensed435.tar
+   nvidia-docker pull pauloabelha/nvidia-dope-realsensed435
    ```
-   Once the loading finishes, please check if the image is available for nvidia-docker:
+  
+   Once the pull finishes, please check if the image is available for nvidia-docker:
    ```
    nvidia-docker images
-   ```
+   ```   
    
    You should see something similar to:
+   
 
 3. **Clone the DOPE code**  
    ```
