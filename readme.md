@@ -76,10 +76,14 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 
    I have installed [Tmux](https://tmuxcheatsheet.com/) at the container to make things easier for runnign the ROS core, starting the camera and visualizing in RViz. For this, you need to firstly run Tmux
    ```
-   $ tmux`
+   $ tmux
+   ```
+   
    Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys. FInally, go up to the top screen and split it into two to get 4 screens on your terminal. Below, I'll be referring to the screens by numbers from top left (1), top right (2), bottom left (3), bottom right (4).
    
    ![Tmux Example With all commands ready to run](example_tmux.png)
+   
+   
 
 1. **Start ROS master (optional at screen 1 in Tmux)**
       ```
