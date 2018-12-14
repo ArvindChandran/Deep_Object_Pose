@@ -28,12 +28,14 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    ```   
    
    You should see something similar to:
+   ```
    cvlab@unibham:~/dope/docker$ nvidia-docker images | | |
    REPOSITORY                             | TAG                     | IMAGE ID            | CREATED             | SIZE
    pauloabelha/nvidia-dope-realsensed435  | latest                  | c002a2f82c69        | 14 hours ago        | 7.45GB
    nvidia-dope                            | kinetic-v1              | efca8e87496b        | 19 hours ago        | 7.16GB
    nvidia/cuda                            | 9.0-base                | 74f5aea45cf6        | 4 weeks ago         | 134MB
    nvidia/cudagl                          | 9.0-devel-ubuntu16.04   | b953c82b3472        | 6 weeks ago         | 2GB
+   ```
 
 
 3. **Clone the DOPE code**  
