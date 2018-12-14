@@ -3,7 +3,7 @@
 # Deep Object Pose Estimation - ROS Inference  (RealSenseD435)
 
 # Disclaimer
-This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. I've kept images, paragraphs and sentences untouched and added some of my own to the original README file. 
+This README has been modified from the original repo to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. I've kept images, paragraphs and sentences untouched and added some of my own to the original README file. 
 The Docker image should have you up and running with an Intel RealSense D435 out of the box. In case you want to do it form scratch, please have a [look here](https://github.com/intel-ros/realsense/#installation-instructions).
 
 # Instructions
