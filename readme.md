@@ -49,8 +49,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    
 5. **Run the container**  
    ```
-   $ ./run_dope_docker.sh [name] [host dir] [container dir]
-   ```     
+   $ ./run_dope_docker.sh [name] [host dir] [container dir]`
    
    Parameters:
    - `name` is an optional field that specifies the name of this image. By default, it is `nvidia-dope-realsensed435`.  By using different names, you can create multiple containers from the same image.  
@@ -58,7 +57,8 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    
       Only the first invocation of this script with a given name will create a container. Subsequent executions will attach to the running container allowing you -- in effect -- to have multiple terminal sessions into a single container.
       After running the container you should find yourself inside of it at:
-      ```root@unibham:~#```
+      ```
+      $ root@unibham:~#`
    
 7. **Build**
      ```
@@ -74,7 +74,8 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 1. **(Optional) Use Tmux **
 
    I have installed [Tmux](https://tmuxcheatsheet.com/) at the container to make things easier for runnign the ROS core, starting the camera and visualizing in RViz. For this, you need to firstly run Tmux
-   ```tmux```
+   ```
+   $ tmux`
    Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys. FInally, go up to the top screen and split it into two to get 4 screens on your terminal. Below, I'll be referring to the screens by numbers from top left (1), top right (2), bottom left (3), bottom right (4).
    
    ![Tmux Example With all commands ready to run](example_tmux.png)
@@ -109,7 +110,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
     
 5. **Run Rviz for visualization (optional at screen 4 in Tmux)**
     ```
-    $ rosrun dope dope.py [my_config.yaml]  # Config file is optional; default is `config_pose.yaml`
+    $ rviz`
 
 
 ## Debugging
