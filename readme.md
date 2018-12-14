@@ -159,6 +159,4 @@ Thanks to Jeffrey Smith (jeffreys@nvidia.com) for creating the Docker image.
 
 ## Contact
 
-(Original repo): Jonathan Tremblay (jtremblay@nvidia.com), Stan Birchfield (sbirchfield@nvidia.com)
-
-(For this modified, forked repo:) Paulo Ferreira
+Jonathan Tremblay (jtremblay@nvidia.com), Stan Birchfield (sbirchfield@nvidia.com)
