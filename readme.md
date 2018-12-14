@@ -43,7 +43,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    ```
    This will take several minutes and requires an internet connection.
    
-5. **Plug in your camera**  
+5. **Plug in your Intel RealSense D435 camera**  
    Docker will not recognize a USB device that is plugged in after the container is started.
    
 6. **Run the container**  
@@ -51,7 +51,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    $ ./run_dope_docker.sh [name] [host dir] [container dir]
    ```     
    Parameters:
-   - `name` is an optional field that specifies the name of this image. By default, it is `nvidia-dope-v1`.  By using different names, you can create multiple containers from the same image.  
+   - `name` is an optional field that specifies the name of this image. By default, it is `nvidia-dope-realsensed435`.  By using different names, you can create multiple containers from the same image.  
    - `host dir` and `container dir` are a pair of optional fields that allow you to specify a mapping between a directory on your host machine and a location inside the container.  This is useful for sharing code and data between the two systems.  By default, it maps the directory containing dope to `/root/catkin_ws/src/dope` in the container.  
    
       Only the first invocation of this script with a given name will create a container. Subsequent executions will attach to the running container allowing you -- in effect -- to have multiple terminal sessions into a single container.
@@ -62,7 +62,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
      $ catkin_make
      ``` 
 
-8. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`.
+8. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`. PLease remember that the docker image path `~/catkin_ws/src/dope/` is linked by default with your dope src path `~/dope/`; this means you can put the downloaded wieght files at your host machine at `~/dope/weights/`.
 
 
 ## Running
