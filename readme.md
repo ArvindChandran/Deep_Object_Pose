@@ -50,7 +50,8 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    
 5. **Run the container**  
    ```
-   $ ./run_dope_docker.sh [name] [host dir] [container dir]`
+   $ ./run_dope_docker.sh [name] [host dir] [container dir]
+   ```   
    
    Parameters:
    - `name` is an optional field that specifies the name of this image. By default, it is `nvidia-dope-realsensed435`.  By using different names, you can create multiple containers from the same image.  
