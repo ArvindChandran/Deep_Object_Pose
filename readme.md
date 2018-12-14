@@ -2,8 +2,8 @@
 ![Python 2.7](https://img.shields.io/badge/python-2.7-green.svg)
 # Deep Object Pose Estimation - ROS Inference  (RealSenseD435)
 
-*Disclaimer*
-This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. These instructions assume you have access to the .TAR file of my image. I've kept some paragraphs and sentences untouched and added some of my own.
+# Disclaimer
+This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. These instructions assume you have access to the .TAR file of my image. I've kept images, paragraphs and sentences untouched and added some of my own.
 
 
 This is the official DOPE ROS package for detection and 6-DoF pose estimation of **known objects** from an RGB camera.  The network has been trained on the following YCB objects:  cracker box, sugar box, tomato soup can, mustard bottle, potted meat can, and gelatin box.  For more details, see our [CoRL 2018 paper](https://arxiv.org/abs/1809.10790) and [video](https://youtu.be/yVGViBqWtBI).
@@ -14,43 +14,30 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 
 ## Installing
 
-1. **Set up system / Docker image**
+1. **Install Nvidia-Docker**
 
-   We have tested on Ubuntu 16.04 with ROS Kinetic with an NVIDIA Titan X with python 2.7.  The code may work on other systems.
-   If you do not have the full ROS install, you may need to install some packages, *e.g.*,
+2. **Create the Docker image**
+
+   These instructions assume you have access to the .TAR file of my image. Once you've downloaded the image,
+   you need to run:
    ```
-   apt-get install ros-kinetic-tf2
-   apt-get install ros-kinetic-cv-bridge
+   nvidia-docker load -i nvidia-dope-realsensed435.tar
+   ```
+   Once the loading finishes, please check if the image is available for nvidia-docker:
+   ```
+   nvidia-docker images
    ```
    
-   Alternatively, use the provided [Docker image](docker/readme.md) and skip to Step #5.
+   You should see something similar to:
+  
    
-2. **Create a catkin workspace** (if you do not already have one). To create a catkin workspace, follow these [instructions](http://wiki.ros.org/catkin/Tutorials/create_a_workspace):
-     ```
-     $ mkdir -p ~/catkin_ws/src   # Replace `catkin_ws` with the name of your workspace
-     $ cd ~/catkin_ws/
-     $ catkin_make
-     ```
-
-3. **Download the DOPE code**
-     ```
-     $ cd ~/catkin_ws/src
-     $ git clone https://github.com/NVlabs/Deep_Object_Pose.git dope
-     ```
-
-4. **Install dependencies**
-     ```
-     $ cd ~/catkin_ws/src/dope
-     $ pip install -r requirements.txt
-     ```
-
-5. **Build**
+3. **Build**
      ```
      $ cd ~/catkin_ws
      $ catkin_make
      ``` 
 
-6. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`.
+4. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`.
 
 
 ## Running
