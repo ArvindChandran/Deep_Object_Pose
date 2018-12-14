@@ -3,12 +3,12 @@
 # Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
 # Full license terms provided in LICENSE.md file.
 
-IMAGE_NAME="nvidia-dope"
-TAG_NAME="realsensed435"
+IMAGE_NAME="pauloabelha/nvidia-dope-realsensed435"
+TAG_NAME="latest"
 
 CONTAINER_NAME=$1
 if [[ -z "${CONTAINER_NAME}" ]]; then
-    CONTAINER_NAME=nvidia-realsensed435
+    CONTAINER_NAME=nvidia-dope-realsensed435
 fi
 
 # This specifies a mapping between a host directory and a directory in the
