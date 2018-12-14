@@ -3,7 +3,7 @@
 # Deep Object Pose Estimation - ROS Inference  (RealSenseD435)
 
 # Disclaimer
-This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. These instructions assume you have access to the .TAR file of my image. I've kept images, paragraphs and sentences untouched and added some of my own.
+This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. These instructions assume you have access to the .TAR file of my image. I've kept images, paragraphs and sentences untouched and added some of my own. In order to use Intel RealSense D435 camera, I had to install its ros libraries; instructions can be [found here](https://github.com/intel-ros/realsense/#installation-instructions).
 
 
 This is the official DOPE ROS package for detection and 6-DoF pose estimation of **known objects** from an RGB camera.  The network has been trained on the following YCB objects:  cracker box, sugar box, tomato soup can, mustard bottle, potted meat can, and gelatin box.  For more details, see our [CoRL 2018 paper](https://arxiv.org/abs/1809.10790) and [video](https://youtu.be/yVGViBqWtBI).
@@ -77,6 +77,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    ```tmux```
    Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys. FInally, go up to the top screen and split it into two to get 4 screens on your terminal. Below, I'll be referring to the screens by numbers from top left (1), top right (2), bottom left (3), bottom right (4).
    
+   ![Tmux Example With all commands ready to run](example_tmux.png)
 
 1. **Start ROS master (optional at screen 1 in Tmux)**
       ```
