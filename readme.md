@@ -1,6 +1,6 @@
 [![License CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 ![Python 2.7](https://img.shields.io/badge/python-2.7-green.svg)
-# Deep Object Pose Estimation - ROS Inference  
+# Deep Object Pose Estimation - ROS Inference  (RealSenseD435)
 
 *Disclaimer*
 This README has been modified to contain instructions only for setting up the Docker image I've built to work with the Intel RealSenseD435 camera. These instructions assume you have access to the .TAR file of my image. I've kept some paragraphs and sentences untouched and added some of my own.
