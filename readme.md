@@ -109,9 +109,7 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
     *Note:*  Config files must be located in the `~/catkin_ws/src/dope/config/` folder.
     
 5. **Run Rviz for visualization (optional at screen 4 in Tmux)**
-    ```
-    $ rviz`
-
+    ```$ rviz`
 
 ## Debugging
 
@@ -162,3 +160,4 @@ Thanks to Jeffrey Smith (jeffreys@nvidia.com) for creating the Docker image.
 ## Contact
 
 Jonathan Tremblay (jtremblay@nvidia.com), Stan Birchfield (sbirchfield@nvidia.com)
+(for this modified, forked repo) Paulo Ferreira
