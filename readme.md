@@ -75,22 +75,22 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 
    I have installed [Tmux](https://tmuxcheatsheet.com/) at the container to make things easier for runnign the ROS core, starting the camera and visualizing in RViz. For this, you need to firstly run Tmux
    ```tmux```
-   Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys.
+   Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys. FInally, go up to the top screen and split it into two to get 4 screens on your terminal. Below, I'll be referring to the screens by numbers from top left (1), top right (2), bottom left (3), bottom right (4).
+   
 
-1. **Start ROS master**
+1. **Start ROS master (optional at screen 1 in Tmux)**
       ```
       $ cd ~/catkin_ws
       $ source devel/setup.bash
       $ roscore
       ```
 
-2. **Start camera node** (or start your own camera node)
+2. **Start Intel RealSense D435 node (optional at screen 2 in Tmux)** 
       ```
-      $ rosrun dope camera.py  # Publishes RGB images to `/dope/webcam_rgb_raw`
-      ```
-  
+      $ roslaunch realsense2_camera rs_camera.launch`
+      ```  
 
-3. **Edit config info** (if desired) in `~/catkin_ws/src/dope/config/config_pose.yaml`
+3. **(Optional) Edit config info** (if desired - I have already configured it for listeing to the Intel RealSense D435 topic) in `~/catkin_ws/src/dope/config/config_pose.yaml`
     * `topic_camera`: RGB topic to listen to
     * `topic_publishing`: topic name for publishing
     * `weights`: dictionary of object names and there weights path name, **comment out any line to disable detection/estimation of that object**
@@ -99,12 +99,16 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
     * `camera_settings`: dictionary for the camera intrinsics; edit these values to match your camera
     * `thresh_points`: Thresholding the confidence for object detection; increase this value if you see too many false positives, reduce it if  objects are not detected. 
     
-4. **Start DOPE node**
+4. **Start DOPE node (optional at screen 3 in Tmux)**
     ```
     $ rosrun dope dope.py [my_config.yaml]  # Config file is optional; default is `config_pose.yaml`
     ```
 
     *Note:*  Config files must be located in the `~/catkin_ws/src/dope/config/` folder.
+    
+5. **Run Rviz for visualization (optional at screen 4 in Tmux)**
+    ```
+    $ rosrun dope dope.py [my_config.yaml]  # Config file is optional; default is `config_pose.yaml`
 
 
 ## Debugging
