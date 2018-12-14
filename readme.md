@@ -18,51 +18,47 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
    Please follow the [Nvidia-Docker quickstart installation](https://github.com/NVIDIA/nvidia-docker)
    
 2. **Pull the Docker image**
+
    ```
    nvidia-docker pull pauloabelha/nvidia-dope-realsensed435
    ```
-  
-   Once the pull finishes, please check if the image is available for nvidia-docker:
+   Pulling the image might take several minuts. Once the pull finishes, please check if the image is available for nvidia-docker:
    ```
    nvidia-docker images
    ```   
    
    You should see something similar to:
    ```
-   cvlab@unibham:~/dope/docker$ nvidia-docker images | | |
+   cvlab@unibham:~$ nvidia-docker images
    REPOSITORY                             | TAG                     | IMAGE ID            | CREATED             | SIZE
    pauloabelha/nvidia-dope-realsensed435  | latest                  | c002a2f82c69        | 14 hours ago        | 7.45GB
    nvidia-dope                            | kinetic-v1              | efca8e87496b        | 19 hours ago        | 7.16GB
    nvidia/cuda                            | 9.0-base                | 74f5aea45cf6        | 4 weeks ago         | 134MB
    nvidia/cudagl                          | 9.0-devel-ubuntu16.04   | b953c82b3472        | 6 weeks ago         | 2GB
    ```
-
+   Please make sure you can see the realsensed435 image: pauloabelha/nvidia-dope-realsensed435
 
 3. **Clone the DOPE code**  
    ```
    $ cd ~
    $ git clone https://github.com/pauloabelha/Deep_Object_Pose.git dope
    ```
-
-4. **Create the container**  
-   ```
-   $ cd ~/dope/docker
-   $ nvidia-docker build -t nvidia-dope:realsensed435 -f Dockerfile.kinetic ..
-   ```
-   This will take several minutes and requires an internet connection.
    
-5. **Plug in your Intel RealSense D435 camera**  
+4. **Plug in your Intel RealSense D435 camera**  
    Docker will not recognize a USB device that is plugged in after the container is started.
    
-6. **Run the container**  
+5. **Run the container**  
    ```
    $ ./run_dope_docker.sh [name] [host dir] [container dir]
    ```     
+   
    Parameters:
    - `name` is an optional field that specifies the name of this image. By default, it is `nvidia-dope-realsensed435`.  By using different names, you can create multiple containers from the same image.  
    - `host dir` and `container dir` are a pair of optional fields that allow you to specify a mapping between a directory on your host machine and a location inside the container.  This is useful for sharing code and data between the two systems.  By default, it maps the directory containing dope to `/root/catkin_ws/src/dope` in the container.  
    
       Only the first invocation of this script with a given name will create a container. Subsequent executions will attach to the running container allowing you -- in effect -- to have multiple terminal sessions into a single container.
+      After running the container you should find yourself inside of it at:
+      ```root@unibham:~#```
    
 7. **Build**
      ```
@@ -74,6 +70,12 @@ This is the official DOPE ROS package for detection and 6-DoF pose estimation of
 
 
 ## Running
+
+1. **(Optional) Use Tmux **
+
+   I have installed [Tmux](https://tmuxcheatsheet.com/) at the container to make things easier for runnign the ROS core, starting the camera and visualizing in RViz. For this, you need to firstly run Tmux
+   ```tmux```
+   Then press Ctrl+b, release, and press ". This should have split your screen horizontally into two. You can then press Ctrl+b, release, and press %. Now, you should have three screens available in the same terminal. You can swap between them by pressing Ctrl+b and using the arrow keys.
 
 1. **Start ROS master**
       ```
